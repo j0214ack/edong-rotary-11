@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>OG</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Noto+Sans+TC:wght@700;900&family=Noto+Serif+TC:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800;900&family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@500&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #262642;
@@ -11,6 +11,7 @@
     --yellow: #f5df4d;
     --paper: #ffffff;
     --mute: #8e8ead;
+    --line: #e6e9ee;
     --sans: 'Inter', 'PingFang TC', 'Noto Sans TC', sans-serif;
     --serif: 'Times New Roman', 'Noto Serif TC', serif;
   }
@@ -20,39 +21,16 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--sans);
-    position: relative;
-    padding: 56px 72px;
+    padding: 56px 80px 48px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 32px;
   }
-  body::before {
-    content: '';
-    position: absolute;
-    top: -120px; right: -120px;
-    width: 360px; height: 360px;
-    border-radius: 50%;
-    background: var(--yellow);
-    opacity: 0.85;
-  }
-  body::after {
-    content: '';
-    position: absolute;
-    bottom: -150px; left: -150px;
-    width: 420px; height: 420px;
-    border-radius: 50%;
-    background: var(--pink);
-    opacity: 0.18;
-  }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    position: relative;
-    z-index: 1;
-  }
+
+  /* Top: brand */
+  .brand { display: flex; align-items: center; gap: 18px; }
   .brand img {
-    width: 78px; height: 78px;
+    width: 76px; height: 76px;
     border-radius: 16px;
     border: 1.5px solid var(--ink);
     padding: 6px;
@@ -61,65 +39,102 @@
   .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
   .brand-text strong {
     font-weight: 800;
-    font-size: 22px;
+    font-size: 24px;
     letter-spacing: -0.005em;
   }
   .brand-text span {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--mute);
     margin-top: 4px;
     letter-spacing: 0.04em;
   }
-  .center {
-    position: relative;
-    z-index: 1;
-    margin-top: -20px;
+
+  /* Middle: big 11 + invitation */
+  .hero {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    flex: 1;
   }
-  .eyebrow {
-    font-weight: 800;
-    font-size: 16px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--pink);
-    margin-bottom: 18px;
-  }
-  .hero-line {
+  .hero-left { display: flex; flex-direction: column; }
+  .num-row {
     display: flex;
     align-items: baseline;
-    gap: 24px;
-    flex-wrap: nowrap;
+    gap: 20px;
+    position: relative;
   }
-  .eleven {
+  .num {
     font-weight: 900;
-    font-size: 320px;
+    font-size: 280px;
     line-height: 0.85;
     letter-spacing: -0.06em;
     color: var(--pink);
+    position: relative;
+  }
+  .num::after {
+    content: '';
+    position: absolute;
+    top: 14%;
+    right: -18px;
+    width: 44px;
+    height: 44px;
+    background: var(--yellow);
+    border-radius: 50%;
+    z-index: -1;
   }
   .label {
     font-weight: 900;
-    font-size: 88px;
+    font-size: 80px;
     line-height: 1;
     letter-spacing: -0.024em;
     color: var(--ink);
   }
-  .invite {
-    margin-top: 14px;
+  .invite-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 8px;
+    padding-bottom: 12px;
+  }
+  .invite-zh {
+    font-weight: 900;
+    font-size: 84px;
+    line-height: 0.95;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .invite-en {
     font-family: var(--serif);
     font-style: italic;
     font-weight: 500;
     font-size: 30px;
-    color: var(--ink);
+    color: var(--pink);
+    letter-spacing: 0.04em;
   }
-  .footer-tag {
-    position: relative;
-    z-index: 1;
+
+  /* Bottom footer line */
+  .footer-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  .footer-text {
     font-weight: 800;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--ink);
+  }
+  .footer-date {
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.16em;
+    color: var(--pink);
   }
 </style>
 </head>
@@ -133,16 +148,23 @@
   </div>
 </div>
 
-<div class="center">
-  <div class="eyebrow">A Celebration · 11th Anniversary</div>
-  <div class="hero-line">
-    <span class="eleven">11</span>
-    <span class="label">E 東社慶</span>
+<div class="hero">
+  <div class="hero-left">
+    <div class="num-row">
+      <span class="num">11</span>
+      <span class="label">E 東社慶</span>
+    </div>
   </div>
-  <div class="invite">— 邀請您與家人，一同共度這場專屬旅程。</div>
+  <div class="invite-block">
+    <div class="invite-zh">邀請您來</div>
+    <div class="invite-en">— Invitation</div>
+  </div>
 </div>
 
-<div class="footer-tag">e 東社慶邀請 · Invitation</div>
+<div class="footer-line">
+  <div class="footer-text">11th Anniversary Celebration</div>
+  <div class="footer-date">2026.06.27</div>
+</div>
 
 </body>
 </html>
