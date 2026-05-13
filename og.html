@@ -2,169 +2,334 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>OG</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800;900&family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@500&display=swap" rel="stylesheet">
+<title>OG · 台北e東 11週年社慶</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #262642;
     --pink: #ff3399;
     --yellow: #f5df4d;
+    --navy: #262642;
     --paper: #ffffff;
-    --mute: #8e8ead;
-    --line: #e6e9ee;
     --sans: 'Inter', 'PingFang TC', 'Noto Sans TC', sans-serif;
-    --serif: 'Times New Roman', 'Noto Serif TC', serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
   body {
     background: var(--paper);
-    color: var(--ink);
+    color: var(--navy);
     font-family: var(--sans);
-    padding: 56px 80px 48px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  /* Top: brand */
-  .brand { display: flex; align-items: center; gap: 18px; }
-  .brand img {
-    width: 76px; height: 76px;
-    border-radius: 16px;
-    border: 1.5px solid var(--ink);
-    padding: 6px;
-    background: var(--paper);
-  }
-  .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-  .brand-text strong {
     font-weight: 800;
-    font-size: 24px;
-    letter-spacing: -0.005em;
-  }
-  .brand-text span {
-    font-weight: 400;
-    font-size: 15px;
-    color: var(--mute);
-    margin-top: 4px;
-    letter-spacing: 0.04em;
+    position: relative;
+    isolation: isolate;
   }
 
-  /* Middle: big 11 + invitation */
-  .hero {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 40px;
-    flex: 1;
+  /* ── PINK WEDGE on right side */
+  .pink-block {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 540px;
+    background: var(--pink);
+    clip-path: polygon(72px 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
   }
-  .hero-left { display: flex; flex-direction: column; }
-  .num-row {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    position: relative;
-  }
-  .num {
-    font-weight: 900;
-    font-size: 280px;
-    line-height: 0.85;
-    letter-spacing: -0.06em;
-    color: var(--pink);
-    position: relative;
-  }
-  .num::after {
+  .pink-block::before {
     content: '';
     position: absolute;
-    top: 14%;
-    right: -18px;
-    width: 44px;
-    height: 44px;
-    background: var(--yellow);
-    border-radius: 50%;
-    z-index: -1;
-  }
-  .label {
-    font-weight: 900;
-    font-size: 80px;
-    line-height: 1;
-    letter-spacing: -0.024em;
-    color: var(--ink);
-  }
-  .invite-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    gap: 8px;
-    padding-bottom: 12px;
-  }
-  .invite-zh {
-    font-weight: 900;
-    font-size: 84px;
-    line-height: 0.95;
-    letter-spacing: -0.018em;
-    color: var(--ink);
-  }
-  .invite-en {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 500;
-    font-size: 30px;
-    color: var(--pink);
-    letter-spacing: 0.04em;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1.4px);
+    background-size: 14px 14px;
+    opacity: 0.65;
+    mix-blend-mode: screen;
   }
 
-  /* Bottom footer line */
-  .footer-line {
+  /* ── editorial frame */
+  .frame {
+    position: absolute;
+    inset: 22px;
+    border: 1.5px solid var(--navy);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* ── MASTHEAD top-left */
+  .masthead {
+    position: absolute;
+    top: 56px;
+    left: 60px;
+    z-index: 4;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--line);
-    padding-top: 18px;
+    gap: 14px;
+    padding: 8px 16px 8px 8px;
+    background: var(--paper);
+    border: 1.5px solid var(--navy);
+    border-radius: 999px;
   }
-  .footer-text {
+  .masthead img {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--paper);
+    padding: 2px;
+    flex-shrink: 0;
+  }
+  .masthead-text { display: flex; flex-direction: column; line-height: 1.18; padding-right: 6px; }
+  .masthead-name {
     font-weight: 800;
-    font-size: 16px;
-    letter-spacing: 0.22em;
+    font-size: 17px;
+    letter-spacing: -0.005em;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .masthead-tag {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--navy);
+    opacity: 0.7;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  /* ── NO.11 tag top-right (on pink) */
+  .issue-tag {
+    position: absolute;
+    top: 56px;
+    right: 80px;
+    z-index: 6;
+    background: var(--navy);
+    color: var(--paper);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--ink);
+    padding: 8px 16px;
+    border-radius: 4px;
   }
-  .footer-date {
-    font-weight: 800;
-    font-size: 16px;
-    letter-spacing: 0.16em;
+  .issue-tag b {
+    color: var(--yellow);
+    font-weight: 900;
+    margin-left: 6px;
+  }
+
+  /* ── YELLOW DISC sun behind 11, straddling pink boundary */
+  .yellow-disc {
+    position: absolute;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: var(--yellow);
+    top: 130px;
+    left: 520px;
+    z-index: 2;
+    box-shadow: 14px 14px 0 0 rgba(38, 38, 66, 0.92);
+  }
+
+  /* ── BIG "11" sitting on yellow disc */
+  .eleven {
+    position: absolute;
+    top: 88px;
+    left: 520px;
+    z-index: 3;
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 380px;
+    line-height: 0.85;
+    letter-spacing: -0.07em;
+    color: var(--navy);
+  }
+
+  /* ── VERTICAL "邀請函" on pink — magazine spine label */
+  .label {
+    position: absolute;
+    top: 90px;
+    right: 60px;
+    z-index: 4;
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  /* ── BIG "E 東社慶" — bold sans pull-text, dominant on white side bottom-left */
+  .hero-text {
+    position: absolute;
+    left: 60px;
+    bottom: 144px;
+    z-index: 4;
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 144px;
+    line-height: 0.9;
+    letter-spacing: -0.024em;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .hero-text .accent {
     color: var(--pink);
+    position: relative;
+    display: inline-block;
+  }
+  .hero-text .accent::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: 8px;
+    height: 14px;
+    background: var(--yellow);
+    z-index: -1;
+  }
+
+  /* ── subtitle: 11 週年社慶 · 邀請您來 — clear context line */
+  .subtitle {
+    position: absolute;
+    left: 64px;
+    bottom: 108px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .subtitle-pill {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.005em;
+    color: var(--navy);
+    background: var(--yellow);
+    padding: 4px 10px;
+    border-radius: 4px;
+    line-height: 1;
+  }
+  .subtitle-zh {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.005em;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .subtitle-en {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.55;
+    margin-left: 4px;
+  }
+
+  /* ── RSVP yellow stamp on pink area */
+  .stamp {
+    position: absolute;
+    right: 88px;
+    bottom: 140px;
+    z-index: 4;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--yellow);
+    border: 2px solid var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-12deg);
+  }
+  .stamp span {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    line-height: 0.9;
+    text-align: center;
+  }
+  .stamp small {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    margin-top: 5px;
+    color: var(--navy);
+    opacity: 0.8;
+    text-transform: none;
+  }
+
+  /* ── BOTTOM CAPTION BAR */
+  .caption {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 52px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .caption-line { flex: 1; height: 1.5px; background: var(--navy); }
+  .caption-left, .caption-center, .caption-right { white-space: nowrap; }
+  .caption-right { color: var(--paper); }
+  .caption-right .accent {
+    color: var(--yellow);
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    margin-right: 8px;
   }
 </style>
 </head>
 <body>
 
-<div class="brand">
-  <img src="logo.png" alt="">
-  <div class="brand-text">
-    <strong>台北e東網路扶輪社</strong>
-    <span>Rotary EClub of Taipei eEast</span>
-  </div>
-</div>
+  <div class="pink-block"></div>
+  <div class="yellow-disc"></div>
+  <div class="frame"></div>
 
-<div class="hero">
-  <div class="hero-left">
-    <div class="num-row">
-      <span class="num">11</span>
-      <span class="label">E 東社慶</span>
+  <div class="masthead">
+    <img src="logo.png" alt="">
+    <div class="masthead-text">
+      <span class="masthead-name">台北e東網路扶輪社</span>
+      <span class="masthead-tag">Rotary EClub of Taipei eEast</span>
     </div>
   </div>
-  <div class="invite-block">
-    <div class="invite-zh">邀請您來</div>
-    <div class="invite-en">— Invitation</div>
-  </div>
-</div>
 
-<div class="footer-line">
-  <div class="footer-text">11th Anniversary Celebration</div>
-  <div class="footer-date">2026.06.27</div>
-</div>
+  <div class="issue-tag">NO.<b>11</b></div>
+
+  <div class="eleven">11</div>
+  <div class="label">邀請函</div>
+
+  <div class="hero-text">E <span class="accent">東社慶</span></div>
+  <div class="subtitle">
+    <span class="subtitle-pill">11 週年社慶</span>
+    <span class="subtitle-zh">邀請您來</span>
+    <span class="subtitle-en">An Invitation</span>
+  </div>
+
+  <div class="stamp">
+    <span>RSVP<small>掃我報名</small></span>
+  </div>
+
+  <div class="caption">
+    <span class="caption-left">EST. 2015</span>
+    <span class="caption-line"></span>
+    <span class="caption-center">TAIPEI eEAST · ANNIVERSARY ISSUE</span>
+    <span class="caption-line"></span>
+    <span class="caption-right"><span class="accent">vol. xi</span>2026 · 06 · 27</span>
+  </div>
 
 </body>
 </html>
