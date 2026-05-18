@@ -335,6 +335,9 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-actions-primary { margin-bottom: 4px; }
+.hero-actions-primary .btn { flex: 1 1 auto; }
+.hero-actions-secondary { gap: 10px; }
 
 /* ─────────── BUTTONS ─────────── */
 .btn {
@@ -706,8 +709,10 @@ section { padding: 120px 0; position: relative; }
           <div class="hero-meta-label">Venue</div>
           <div class="hero-meta-value">新北市汐止區康寧街 169 巷 1 號 5 樓</div>
         </div>
-        <div class="hero-actions">
+        <div class="hero-actions hero-actions-primary">
           <a href="#rsvp" class="btn btn-pink">查看報名方案 <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-actions hero-actions-secondary">
           <a href="#program" class="btn btn-outline">活動流程</a>
           <a href="parking.html" class="btn btn-outline">停車指引 🅿️</a>
         </div>
