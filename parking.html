@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>停車指引 · 3522 台北e東網路扶輪社 11 週年社慶</title>
+<meta name="description" content="2026.06.27 11 週年社慶 — 正凌精密停車場路線指引、酒精提供與安全提醒。">
+<link rel="icon" type="image/png" href="logo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://j0214ack.github.io/edong-rotary-11/parking.html">
+<meta property="og:title" content="停車指引 · 3522 台北e東網路扶輪社 11 週年社慶">
+<meta property="og:description" content="正凌精密停車場路線指引、酒精提供與安全提醒。">
+<meta property="og:image" content="https://j0214ack.github.io/edong-rotary-11/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #262642;
+  --ink-soft: #4a4a6e;
+  --paper: #ffffff;
+  --pink: #ff3399;
+  --pink-deep: #990066;
+  --pink-soft: #fdeef8;
+  --yellow: #f5df4d;
+  --yellow-soft: #fefced;
+  --blue: #4a8dff;
+  --blue-soft: #e5faf9;
+  --mute: #8e8ead;
+  --line: #e6e9ee;
+
+  --sans: 'Inter', 'PingFang TC', 'Noto Sans TC', system-ui, sans-serif;
+  --serif: 'Times New Roman', 'Noto Serif TC', 'Songti TC', serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.eyebrow {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* ─── TOPBAR ─── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(14px);
+  padding: 12px 0;
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand-logo {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.brand-logo img { width: 100%; height: 100%; object-fit: contain; padding: 3px; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-name {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+.brand-tag {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--mute);
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.topbar-back {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--pink);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.topbar-back .arrow { transition: transform 200ms ease; }
+.topbar-back:hover .arrow { transform: translateX(-4px); }
+
+/* ─── HERO ─── */
+.hero { padding: 56px 0 32px; }
+.hero-eyebrow { color: var(--pink); margin-bottom: 18px; }
+.hero-title {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+.hero-title em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}
+.hero-sub {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 720px;
+}
+
+/* ─── ALERT (酒精 / 不開車) ─── */
+.alert {
+  margin: 32px 0 48px;
+  border: 2px solid var(--ink);
+  border-radius: 24px;
+  padding: 28px 32px;
+  background: var(--yellow);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px 22px;
+  align-items: start;
+}
+.alert-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+.alert-body {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.alert-body strong {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 19px;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: -0.005em;
+}
+.alert-body em {
+  font-family: var(--sans);
+  font-style: normal;
+  background: var(--ink);
+  color: var(--yellow);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  margin: 0 2px;
+}
+
+/* ─── ADDRESS BLOCK ─── */
+.address {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 64px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px 32px;
+}
+.address-label {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  padding-top: 4px;
+}
+.address-value {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--paper);
+}
+.address-note {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--mute);
+  margin-top: 4px;
+}
+
+/* ─── STEPS ─── */
+.steps { padding-bottom: 80px; }
+.step {
+  margin-bottom: 80px;
+}
+.step-num {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--pink);
+  margin-bottom: 6px;
+}
+.step-title {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 41px);
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+  margin-bottom: 14px;
+}
+.step-desc {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+  max-width: 720px;
+}
+.step-desc strong {
+  font-family: var(--sans);
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--yellow);
+  padding: 1px 8px;
+  border-radius: 4px;
+}
+
+.shots {
+  display: grid;
+  gap: 18px;
+}
+.shots.two { grid-template-columns: 1fr 1fr; }
+.shots.three { grid-template-columns: repeat(3, 1fr); }
+.shot {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--line);
+  position: relative;
+}
+.shot img { width: 100%; height: auto; display: block; }
+.shot-caption {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
+/* ─── SPOT VARIANTS — toggle by spot ─── */
+.spots-intro {
+  background: var(--blue-soft);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.spot-card {
+  background: var(--pink-soft);
+  border-radius: 20px;
+  padding: 28px 28px 32px;
+  margin-bottom: 24px;
+}
+.spot-card.yellow { background: var(--yellow-soft); }
+.spot-card.blue { background: var(--blue-soft); }
+.spot-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  margin-bottom: 14px;
+}
+.spot-title {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  margin-bottom: 10px;
+}
+.spot-desc {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+/* ─── PLANS GRID ─── */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.plan-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.plan-card img {
+  width: 100%;
+  display: block;
+}
+.plan-card-label {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 14px 16px;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+}
+
+/* ─── BOTTOM CTA ─── */
+.bottom-cta {
+  margin-top: 40px;
+  text-align: center;
+  padding: 60px 0 100px;
+  border-top: 1px solid var(--line);
+}
+.bottom-cta-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  padding: 18px 32px;
+  transition: transform 140ms ease, background 140ms ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-pink {
+  background: var(--pink);
+  color: var(--paper);
+  border-color: var(--pink);
+}
+.btn-pink:hover { background: var(--pink-deep); border-color: var(--pink-deep); }
+.btn .arrow { transition: transform 200ms ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ─── FOOTER ─── */
+.footer {
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-text {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 720px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 36px 0 24px; }
+  .alert { grid-template-columns: 1fr; padding: 22px 22px; }
+  .alert-icon { font-size: 28px; }
+  .address { grid-template-columns: 1fr; padding: 22px 22px; gap: 4px 0; }
+  .address-label { padding-top: 0; margin-top: 6px; }
+  .address-value { font-size: 17px; }
+  .step { margin-bottom: 60px; }
+  .step-num { font-size: 48px; }
+  .shots.two, .shots.three { grid-template-columns: 1fr; }
+  .topbar-back .text-full { display: none; }
+  .brand-tag { display: none; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <div class="brand-logo"><img src="logo.png" alt="3522 台北e東網路扶輪社"></div>
+      <div class="brand-text">
+        <span class="brand-name">3522 台北e東網路扶輪社</span>
+        <span class="brand-tag">11 週年社慶 · 停車指引</span>
+      </div>
+    </div>
+    <a href="index.html" class="topbar-back"><span class="arrow">←</span><span class="text-full">回邀請函</span></a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow hero-eyebrow">Parking · 停車指引</div>
+    <h1 class="hero-title">如何到<em>正凌精密</em>停車</h1>
+    <p class="hero-sub">活動當天請依照本指引找到停車位。下方有路線步驟、各停車格位置與地下室平面圖；不需要全部看完，依您的指定車位翻閱對應段落即可。</p>
+
+    <div class="alert">
+      <div class="alert-icon">🍻</div>
+      <div class="alert-body">
+        <strong>現場備有酒精性飲料</strong>
+        為了您與家人的安全，<em>喝酒不開車，開車不喝酒</em>。建議搭乘大眾運輸或預先安排代駕 / Uber。
+      </div>
+    </div>
+
+    <div class="address">
+      <div class="address-label">Address</div>
+      <div>
+        <div class="address-value">新北市 汐止區 康寧街 169 巷 1 號 5 樓</div>
+        <div class="address-note">停車場入口請見下方 Step 1</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="steps">
+  <div class="container">
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <h2 class="step-title">抵達正凌精密</h2>
+      <p class="step-desc">沿康寧街 169 巷進入，左側為<strong>富都康莊</strong>大樓，正凌精密停車場入口就在大樓旁的車道下方。</p>
+      <div class="shots two">
+        <div>
+          <div class="shot"><img src="parking/1-exterior-fudu-kangzhuang.jpg" alt="富都康莊大樓外觀"></div>
+          <div class="shot-caption">富都康莊大樓外觀（康寧街 169 巷）</div>
+        </div>
+        <div>
+          <div class="shot"><img src="parking/2-entrance-parking-sign.jpg" alt="正凌精密停車場入口"></div>
+          <div class="shot-caption">正凌精密停車場入口（藍色看板）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">02</div>
+      <h2 class="step-title">進入閘門</h2>
+      <p class="step-desc">車道下行至閘門，會看到「外車請勿入」橫條。請<strong>按左手邊的呼叫鈴</strong>，櫃台會為您開啟閘門。</p>
+      <div class="shots two">
+        <div>
+          <div class="shot"><img src="parking/3-gate-not-allowed.jpg" alt="閘門「外車請勿入」"></div>
+          <div class="shot-caption">閘門前 — 不需直接進，先按呼叫鈴</div>
+        </div>
+        <div>
+          <div class="shot"><img src="parking/4-buzzer.jpg" alt="呼叫鈴位置"></div>
+          <div class="shot-caption">左手邊的呼叫鈴</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <h2 class="step-title">找到您的停車格</h2>
+      <p class="step-desc">本場地有多個編號的「正凌」專用停車格，分布在 B2、B3 兩層。請對照您被分配到的車位編號，參考下方的路線。如不確定請現場洽詢工作人員。</p>
+
+      <div class="spots-intro">
+        💡 提示：閘門進入後請依您的車位編號選擇對應路線。建議停妥後拍張周邊照片，方便回程定位。
+      </div>
+
+      <div class="spot-card">
+        <span class="spot-tag">B2-05 / 06 / 07</span>
+        <div class="spot-title">B2 — 正凌 05、06、07 號車位</div>
+        <p class="spot-desc">閘門進入後沿車道<strong>一直右轉</strong>，即可看到「B2」標示與「正凌 04 / 05 / 06」的天花板掛牌。</p>
+        <div class="shots three">
+          <div><div class="shot"><img src="parking/5-b2-sign.jpg" alt="B2 標示"></div><div class="shot-caption">B2 標示牆</div></div>
+          <div><div class="shot"><img src="parking/6-b2-05-spot.jpg" alt="正凌 04 / 05 / 06 車位"></div><div class="shot-caption">正凌 04 / 05 / 06 車位</div></div>
+          <div><div class="shot"><img src="parking/7-b2-area-overview.jpg" alt="B2 區域 overview"></div><div class="shot-caption">B2 區域全景</div></div>
+        </div>
+      </div>
+
+      <div class="spot-card yellow">
+        <span class="spot-tag">B2-12</span>
+        <div class="spot-title">B2 — 正凌 12 號車位</div>
+        <p class="spot-desc">在<strong>要進 B3 的車道前右邊</strong>位置。可看到「正凌 11 / 12 / 13」的標示牌。</p>
+        <div class="shots two">
+          <div><div class="shot"><img src="parking/8-b2-12-spot.jpg" alt="B2-12 位置"></div><div class="shot-caption">正凌 11 / 12 / 13 標示</div></div>
+          <div><div class="shot"><img src="parking/9-b2-to-b3-entry.jpg" alt="B2 通往 B3 的入口"></div><div class="shot-caption">B2 通往 B3 的車道入口</div></div>
+        </div>
+      </div>
+
+      <div class="spot-card blue">
+        <span class="spot-tag">B2-13</span>
+        <div class="spot-title">B2 — 正凌 13 號車位</div>
+        <p class="spot-desc">進入閘門後，沿車道下來<strong>右邊位置</strong>。會看到「正凌 13」標示牌與消防栓。</p>
+        <div class="shots two">
+          <div><div class="shot"><img src="parking/10-b2-13-arrow.jpg" alt="B2-13 方向"></div><div class="shot-caption">通往 B2-13 的車道指引</div></div>
+          <div><div class="shot"><img src="parking/11-b2-13-spot.jpg" alt="正凌 13 車位"></div><div class="shot-caption">正凌 13 — 消防栓旁</div></div>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <span class="spot-tag">B3-13 / B3-14</span>
+        <div class="spot-title">B3 — 正凌 13、14 號車位</div>
+        <p class="spot-desc">先<strong>右轉再左轉到底</strong>。注意 13、14 號為<strong>子母車位</strong>，可前後停。</p>
+        <div class="shots three">
+          <div><div class="shot"><img src="parking/12-b3-arrows.jpg" alt="B3 區指引"></div><div class="shot-caption">B3 區域方向指引</div></div>
+          <div><div class="shot"><img src="parking/13-b3-area.jpg" alt="B3 停車區域"></div><div class="shot-caption">B3 停車區域</div></div>
+          <div><div class="shot"><img src="parking/14-b3-13-14-spot.jpg" alt="B3-13 / 14 子母車位"></div><div class="shot-caption">B3-13 / 14 子母車位</div></div>
+        </div>
+        <div class="alert" style="margin-top: 24px; background: var(--blue-soft); border-color: var(--blue);">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-body">
+            <strong>子母車位停靠規則</strong>
+            裡面（後）車子請以<em>後面基準線</em>為準向後停靠；前台車子超出格線沒關係。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">04</div>
+      <h2 class="step-title">地下室平面圖（參考用）</h2>
+      <p class="step-desc">如果現場找不到方向，可對照以下平面圖（黃色 / 粉色 highlight 為正凌專用車位）。</p>
+      <div class="plans-grid">
+        <div class="plan-card"><img src="parking/plan-b3.jpg" alt="B3 平面圖"><div class="plan-card-label">B3 地下三樓平面圖</div></div>
+        <div class="plan-card"><img src="parking/plan-ab-b2.jpg" alt="AB 棟 B2 平面圖"><div class="plan-card-label">AB 棟 B2 平面圖</div></div>
+        <div class="plan-card"><img src="parking/plan-ab-b1.jpg" alt="AB 棟 B1 平面圖"><div class="plan-card-label">AB 棟 B1 平面圖</div></div>
+        <div class="plan-card"><img src="parking/plan-xinbei-b2.jpg" alt="信北棟 B2 平面圖"><div class="plan-card-label">信北棟 B2 平面圖</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <div class="container">
+    <p class="bottom-cta-text">準備好了嗎？回邀請函查看活動詳情與報名。</p>
+    <a href="index.html" class="btn btn-pink">回邀請函 <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-text">3522 台北e東網路扶輪社 · 11th Anniversary · 2026.06.27</div>
+    <div class="footer-text">活動地點 · 新北市汐止區康寧街 169 巷 1 號 5 樓</div>
+  </div>
+</footer>
+
+</body>
+</html>

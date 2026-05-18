@@ -2,4 +2,5 @@ design-extract-output/
 design.md
 invitation-body.md
 *.jpeg
+*.pptx
 .DS_Store
